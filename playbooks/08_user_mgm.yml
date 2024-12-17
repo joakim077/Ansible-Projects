@@ -1,0 +1,14 @@
+---
+- name: User Management
+  hosts: all
+
+  tasks:
+  - name: User Creation
+    user:
+      name: "{{ item }}"     # dynamically sets the user name from list
+      comment: new user adding for QA Team
+      shell: /bin/bash
+    loop:
+      - Raju
+      - Sham
+      - Baburao
